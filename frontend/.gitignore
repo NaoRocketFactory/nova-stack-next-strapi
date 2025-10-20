@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Next.js
+.next/
+out/
+
+# Mac/Linux/Windows system files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env*
+!.env.example
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Optional IDE settings
+.vscode/
+.idea/
+
+# Optional: Build artifacts
+dist/
+build/
+
+# If previously used pnpm/yarn, ignore their files too:
+pnpm-lock.yaml
+yarn.lock

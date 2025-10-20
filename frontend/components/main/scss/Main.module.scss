@@ -1,0 +1,49 @@
+@use "../../../styles/variables" as *;
+@use "sass:color";
+
+.main {
+  text-align: center;
+  padding: 6rem 1rem;
+  background-color: $neutral-50;
+  color: $secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 500px;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+.title {
+  color: $neutral-900;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: $neutral-700;
+  margin-bottom: 2rem;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+

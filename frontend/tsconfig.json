@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    /* ⚙️ Modern target for React 19 / Next 15 */
+    "target": "ES2022",
+    /* 📚 Libraries included in the compilation */
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    /* 🔧 General TypeScript compiler options */
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "forceConsistentCasingInFileNames": true,
+    /* 🧠 React automatic JSX transform (no need to import React) */
+    "jsx": "preserve",
+    /* 📦 Global type definitions available in the project */
+    "types": [
+      "react",
+      "react-dom",
+      "node"
+    ],
+    /* 🪄 Enable Next.js type support */
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    /* 🛣️ Path alias for cleaner imports */
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  /* 📂 Files included in the TypeScript build */
+  "include": [
+    "next-env.d.ts",
+    "types",
+    "src/**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  /* 🚫 Excluded folders */
+  "exclude": [
+    "node_modules"
+  ]
+}
