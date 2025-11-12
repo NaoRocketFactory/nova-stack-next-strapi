@@ -1,0 +1,74 @@
+############################
+# OS / Editors
+############################
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+._*
+*~
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.idea
+.vscode/
+nbproject
+*#
+
+############################
+# Logs / DB / Temp
+############################
+*.log
+*.db
+*.sqlite
+*.sqlite3
+.tmp/
+build/
+dist/
+coverage/
+.eslintcache
+.tsbuildinfo
+
+############################
+# Node
+############################
+node_modules/
+pids/
+logs/
+results/
+npm-debug.log*
+yarn-error.log
+.pnp.*
+lib-cov
+lcov.info
+
+############################
+# Strapi Specific
+############################
+.env
+.env.local
+.env.production
+.strapi/
+.strapi-cloud.json
+.strapi-updater.json
+public/uploads/*
+!public/uploads/.gitkeep
+
+############################
+# Packages / Archives
+############################
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+*.iso
+
+############################
+# Optional: prevent license duplication
+############################
+LICENSE*
+license.txt
+exports/
