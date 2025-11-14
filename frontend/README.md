@@ -30,7 +30,9 @@ A modern, scalable, and clean frontend starter built with:
 
 nova-starter-kit/
 │
-├── app/                 # App Router directory
+├── app/                # App Router directory
+│   ├──about      # About Page
+│   ├──readme      # Readme Page
 │   ├── layout.tsx       # Global layout
 │   └── page.tsx         # Homepage
 │
@@ -52,11 +54,7 @@ nova-starter-kit/
 
 ## 🚀 Getting Started
 
-### 1. **Clone the repo**
-
-git clone https://github.com/yourusername/nova-starter-kit.git
-
-2. Install dependencies
+1. Install dependencies
 
 npm install
 

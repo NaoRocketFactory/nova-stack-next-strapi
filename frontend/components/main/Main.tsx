@@ -21,12 +21,16 @@ export default function Main() {
         Next.js + Strapi + Sass Modules + TypeScript.
       </p>
       <a
-        href="https://github.com/NaoRocketFactory/nova-stack-next-strapi/blob/main/README.md" // Remplace par ton repo
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/readme"
         className={styles.link}
       >
         📖 View README
+      </a>
+      <a
+      href="/about"
+      className={styles.link}
+      >
+      📖 About Nao Rocket Factory
       </a>
     </section>
   );
