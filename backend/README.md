@@ -46,7 +46,7 @@ backend/
 
 ## 🚀 Getting Started
 
-### 1. **Clone and install**
+### 1. **Install**
 
 ```bash
 cd backend
