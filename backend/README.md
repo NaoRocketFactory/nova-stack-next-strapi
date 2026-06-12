@@ -92,10 +92,21 @@ On the first launch (npm run develop), Strapi will prompt you to create your fir
 
 This starter kit includes an automatic seed system that generates demo content on first launch:
 
-Collection	Example Entries
+| Collection | Example Entries                                              |
+| ---------- | ------------------------------------------------------------ |
+| Article    | “Welcome to Nova Starter Kit 🚀”, “Next.js + Strapi + Sass = ❤️” |
+| Page       | “Home”, “About”                                              |
 
-- Article	“Welcome to Nova Starter Kit 🚀”, “Next.js + Strapi + Sass = ❤️”
-- Page	“Home”, “About”
+## **🔐 API Permissions (required)**
+
+By default Strapi blocks all public API access. After creating your admin account:
+
+1. Go to **Settings → Users & Permissions → Roles → Public**
+2. Under **Article**, enable: `find`, `findOne`
+3. Under **Page**, enable: `find`, `findOne`
+4. Click **Save**
+
+Without this step, the frontend will receive `403 Forbidden` errors.
 
 ## **📜 License**
 

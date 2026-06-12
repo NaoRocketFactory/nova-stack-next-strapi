@@ -1,73 +1,86 @@
 # 🚀 Next.js + Strapi Starter Kit
 
 A clean and minimal **Next.js + Strapi** starter kit designed to help you bootstrap a modern full-stack application quickly.  
-This root README only covers the global setup.
+This root README covers the global setup. Detailed documentation is in each sub-folder:
 
-“Start the full stack (frontend + backend) with a single command — no manual setup required.”
-
-Detailed documentation is available inside each folder:
-
-- `backend/README.md`
-- `frontend/README.md`
+- [`backend/README.md`](./backend/README.md)
+- [`frontend/README.md`](./frontend/README.md)
 
 > 📍 **This project is distributed under a commercial license.**  
-Please refer to the `LICENSE` file for usage terms and restrictions.
+> Please refer to the `LICENSE` file for usage terms and restrictions.
 
 ---
 
 ## 📂 Project Structure
 
 ```bash
-├── backend/ # Strapi (API & CMS)
-├── frontend/ # Next.js (Frontend)
-└── package.json # Root scripts
+├── backend/      # Strapi 5 (Headless CMS & API)
+├── frontend/     # Next.js 15 (Frontend)
+└── package.json  # Root scripts (runs both apps in parallel)
 ```
-
 
 ---
 
 ## ✅ Requirements
 
-- Node.js 18+
-- npm 9+
+- Node.js 22 (see `.nvmrc`)
+- pnpm 9+ — install with `npm install -g pnpm`
 
 ---
 
-## 🧪 Install Dependencies
+## 🧪 Install & Run
 
-From the root folder:
-
-```bash
-npm install
-```
-
-This installs the tools required to run both apps together.
-Backend & frontend dependencies will be installed automatically on first run.
-
-## ▶️ Start Both Apps
-
-Run this command at the root:
+### 1. Install root dependencies
 
 ```bash
-npm run dev
+pnpm install
 ```
 
-This will start:
+### 2. Configure environment variables
 
-Service	URL
-Frontend (Next.js)	http://localhost:3000
-Backend (Strapi Admin)
-http://localhost:1337/admin
+```bash
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env.local
+```
+
+Edit each `.env` file with your own values (API keys, database credentials, etc.).
+
+### 3. Start both apps in parallel
+
+```bash
+pnpm dev
+```
+
+| Service             | URL                          |
+| ------------------- | ---------------------------- |
+| Frontend (Next.js)  | http://localhost:3000        |
+| Backend (Strapi)    | http://localhost:1337/admin  |
+
+---
+
+## 🔐 Strapi API Permissions (required on first launch)
+
+After creating your Strapi admin account, you must enable public access to the content API:
+
+1. Go to **Settings → Users & Permissions → Roles → Public**
+2. Under **Article**, enable: `find`, `findOne`
+3. Under **Page**, enable: `find`, `findOne`
+4. Click **Save**
+
+Without this step, the frontend will receive `403 Forbidden` responses from the API.
+
+---
 
 ## 🔧 Environment Variables
 
-You will find example environment files here:
-```bash
-backend/.env.example
-frontend/.env.example
-```
+| File                     | Purpose                            |
+| ------------------------ | ---------------------------------- |
+| `backend/.env.example`   | Strapi keys, DB config, ports      |
+| `frontend/.env.example`  | API URL, app URL, Strapi API token |
+
+---
 
 ## 📄 License
 
-This starter is provided under a commercial license.
-Please review the LICENSE file before using, modifying, or distributing this project.
+This starter is provided under a commercial license.  
+Please review the `LICENSE` file before using, modifying, or distributing this project.

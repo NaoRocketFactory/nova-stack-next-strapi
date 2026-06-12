@@ -1,7 +1,8 @@
 import path from 'path';
 
-export default ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'sqlite');
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default ({ env }: { env: any }) => {
+  const client = env('DATABASE_CLIENT', 'sqlite') as 'mysql' | 'postgres' | 'sqlite';
 
   const connections = {
     mysql: {
@@ -10,7 +11,7 @@ export default ({ env }) => {
         port: env.int('DATABASE_PORT', 3306),
         database: env('DATABASE_NAME', 'strapi'),
         user: env('DATABASE_USERNAME', 'strapi'),
-        password: env('DATABASE_PASSWORD', 'strapi'),
+        password: env('DATABASE_PASSWORD'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
@@ -29,7 +30,7 @@ export default ({ env }) => {
         port: env.int('DATABASE_PORT', 5432),
         database: env('DATABASE_NAME', 'strapi'),
         user: env('DATABASE_USERNAME', 'strapi'),
-        password: env('DATABASE_PASSWORD', 'strapi'),
+        password: env('DATABASE_PASSWORD'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),

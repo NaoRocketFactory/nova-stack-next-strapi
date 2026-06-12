@@ -1,75 +1,90 @@
 import type { Metadata } from "next";
+import { Inter, Poppins } from "next/font/google";
+import Link from "next/link";
+import { ThemeProvider } from "../components/providers/ThemeProvider";
+import { ThemeToggle } from "../components/theme-toggle/ThemeToggle";
 import styles from "./scss/Layout.module.scss";
 import "../styles/globals.scss";
 
-/**
- * 🧠 Metadata Configuration
- * -----------------------------------------------------
- * This section defines SEO and social meta tags for your app.
- * You can customize these values according to your project name,
- * description, and domain.
- *
- * Note:
- * - `metadataBase` should point to your deployed domain or repo.
- * - You can extend this object with OpenGraph or Twitter card data.
- */
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Nova Starter Kit",
   description:
     "A modern starter kit powered by Next.js, Strapi, Sass Modules, and TypeScript.",
-    icons: {
-    icon: "/pictures/favicon.ico", // Standard browsers
-    apple: "/pictures/nova-starter-kit-logo.png", // For iOS / Safari
+  icons: {
+    icon: "/pictures/favicon.ico",
+    apple: "/pictures/nova-starter-kit-logo.png",
   },
   keywords: ["Next.js", "Strapi", "Sass", "Starter Kit", "TypeScript"],
   authors: [
     { name: "Nao Rocket Factory", url: "https://github.com/NaoRocketFactory" },
   ],
   creator: "Nao Rocket Factory",
-  metadataBase: new URL("https://github.com/NaoRocketFactory"),
-
-  // Example of optional SEO extensions (uncomment if needed)
-  // openGraph: {
-  //   title: "Nova Starter Kit",
-  //   description:
-  //     "Clean, scalable, and Strapi-ready Next.js starter kit built for modern devs.",
-  //   url: "https://naorocketfactory.com",
-  //   siteName: "Nova Starter Kit",
-  //   images: [
-  //     { url: "/pictures/nova-starter-kit-logo.png", width: 1200, height: 630 },
-  //   ],
-  //   locale: "en_US",
-  //   type: "website",
-  // },
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"
+  ),
+  openGraph: {
+    title: "Nova Starter Kit",
+    description:
+      "Clean, scalable, and Strapi-ready Next.js starter kit built for modern devs.",
+    siteName: "Nova Starter Kit",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
-/**
- * 🧩 Root Layout Component
- * -----------------------------------------------------
- * This is the main layout of your application.
- * It wraps all pages (App Router structure) and defines
- * the global HTML, <body>, and footer structure.
- *
- * The <main> tag displays the routed page content.
- */
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={styles.body}>
-        <div className={styles.layout}>
-          <main className={styles.main}>{children}</main>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${poppins.variable}`}
+    >
+      <body>
+        <ThemeProvider>
+          <div className={styles.layout}>
 
-          <footer className={styles.footer}>
-            © {new Date().getFullYear()}{" "}
-            <a
-              href="https://github.com/NaoRocketFactory"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Nao Rocket Factory — Built with ❤️ for devs.
-            </a>
-          </footer>
-        </div>
+            <header className={styles.header}>
+              <div className={styles.headerInner}>
+                <Link href="/" className={styles.brand}>
+                  Nova Starter Kit
+                </Link>
+                <nav className={styles.nav} aria-label="Main navigation">
+                  <Link href="/" className={styles.navLink}>Home</Link>
+                  <Link href="/articles" className={styles.navLink}>Articles</Link>
+                </nav>
+                <ThemeToggle />
+              </div>
+            </header>
+
+            <main className={styles.main}>{children}</main>
+
+            <footer className={styles.footer}>
+              © {new Date().getFullYear()}{" "}
+              <a
+                href="https://github.com/NaoRocketFactory"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Nao Rocket Factory
+              </a>{" "}
+              — Built with Next.js &amp; Strapi.
+            </footer>
+
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

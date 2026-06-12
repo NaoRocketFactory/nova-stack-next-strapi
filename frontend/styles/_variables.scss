@@ -5,9 +5,8 @@ $neutral-50: #f9fafb;
 $neutral-900: #111827;
 $neutral-700: #374151;
 
-// Typography
-$font-body: "Inter", sans-serif;
-$font-heading: "Poppins", sans-serif;
+// Typography — CSS vars injected by next/font in layout.tsx
+// Use var(--font-body) and var(--font-heading) directly in component SCSS.
 
 // Radius / shadow
 $radius-xl: 1rem;

@@ -1,5 +1,6 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -7,6 +8,7 @@ const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
 });
 
 export default [
@@ -17,20 +19,25 @@ export default [
     "plugin:prettier/recommended"
   ),
 
+  // --- Global ignores ---
+  {
+    ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "dist/**", "next-env.d.ts"],
+  },
+
+  // --- TypeScript files: disable no-undef (TypeScript handles this) ---
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    rules: {
+      "no-undef": "off",
+    },
+  },
+
   // --- Custom rules ---
   {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "dist/**",
-      "next-env.d.ts",
-    ],
     rules: {
       // ✅ Next.js
       "@next/next/no-html-link-for-pages": "off",
-      "@next/next/no-img-element": "off",
+      "@next/next/no-img-element": "warn",
 
       // ✅ JS / TS
       "no-unused-vars": "warn",

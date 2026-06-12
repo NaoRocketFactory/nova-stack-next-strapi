@@ -1,10 +1,12 @@
 {
   "name": "nova-starter-kit",
   "private": true,
+  "packageManager": "pnpm@11.5.0",
   "scripts": {
     "dev": "npm-run-all --parallel dev:backend dev:frontend",
-    "dev:backend": "cd backend && npm install && npm run dev",
-    "dev:frontend": "cd frontend && npm install && npm run dev"
+    "dev:backend": "cd backend && pnpm install && pnpm dev",
+    "dev:frontend": "cd frontend && pnpm install && pnpm dev",
+    "install:all": "cd backend && pnpm install && cd ../frontend && pnpm install"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"

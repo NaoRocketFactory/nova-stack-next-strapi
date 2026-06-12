@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    /* ⚙️ Modern target for React 19 / Next 15 */
+    /* ⚙️ Modern target for React 19 / Next 16 */
     "target": "ES2022",
     /* 📚 Libraries included in the compilation */
     "lib": [
@@ -21,7 +21,7 @@
     "incremental": true,
     "forceConsistentCasingInFileNames": true,
     /* 🧠 React automatic JSX transform (no need to import React) */
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     /* 📦 Global type definitions available in the project */
     "types": [
       "react",
@@ -37,7 +37,7 @@
     /* 🛣️ Path alias for cleaner imports */
     "paths": {
       "@/*": [
-        "./src/*"
+        "./*"
       ]
     }
   },
@@ -48,7 +48,8 @@
     "src/**/*",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   /* 🚫 Excluded folders */
   "exclude": [

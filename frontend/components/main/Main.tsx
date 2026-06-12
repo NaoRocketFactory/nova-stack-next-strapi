@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import styles from "../../components/main/scss/Main.module.scss";
 import logoNova from "../../public/pictures/nova-starter-kit-logo.png";
