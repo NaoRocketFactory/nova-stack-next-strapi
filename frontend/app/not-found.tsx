@@ -6,9 +6,7 @@ export default function NotFound() {
     <div className={styles.container}>
       <p className={styles.code}>404</p>
       <h2 className={styles.title}>Page not found</h2>
-      <p className={styles.message}>
-        This page does not exist or has been moved.
-      </p>
+      <p className={styles.message}>This page does not exist or has been moved.</p>
       <Link href="/" className={styles.link}>
         ← Back to home
       </Link>

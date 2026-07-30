@@ -1,28 +1,17 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
 import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-});
-
-export default [
-  // --- Import presets ESLint classics via compat ---
-  ...compat.extends(
-    "next/core-web-vitals",
-    "eslint:recommended",
-    "plugin:prettier/recommended"
-  ),
-
+const config = [
   // --- Global ignores ---
   {
     ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "dist/**", "next-env.d.ts"],
   },
+
+  // --- Native flat-config presets (no FlatCompat needed on ESLint 9 + Next 16) ---
+  js.configs.recommended,
+  ...nextCoreWebVitals,
+  eslintPluginPrettierRecommended,
 
   // --- TypeScript files: disable no-undef (TypeScript handles this) ---
   {
@@ -58,3 +47,5 @@ export default [
     },
   },
 ];
+
+export default config;

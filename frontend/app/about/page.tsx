@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
-import styles from '../about/scss/about.module.scss';
+import styles from "../about/scss/about.module.scss";
 
 export default async function AboutPage() {
   // Load ABOUT.md
@@ -17,10 +17,7 @@ export default async function AboutPage() {
 
   return (
     <section className={styles.container}>
-      <div
-        className={styles.markdown}
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-      />
+      <div className={styles.markdown} dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </section>
   );
 }

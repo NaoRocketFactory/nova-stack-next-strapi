@@ -13,7 +13,8 @@ export default function Error({ error, reset }: ErrorProps) {
     console.error(error);
   }, [error]);
 
-  const isStrapiDown = error.message.toLowerCase().includes("fetch") ||
+  const isStrapiDown =
+    error.message.toLowerCase().includes("fetch") ||
     error.message.includes("ECONNREFUSED") ||
     error.message.includes("timed out");
 
@@ -26,9 +27,7 @@ export default function Error({ error, reset }: ErrorProps) {
           ? "Cannot reach the API. Make sure Strapi is running on port 1337."
           : error.message || "An unexpected error occurred."}
       </p>
-      {error.digest && (
-        <p className={styles.digest}>Error ID: {error.digest}</p>
-      )}
+      {error.digest && <p className={styles.digest}>Error ID: {error.digest}</p>}
       <button className={styles.button} onClick={reset}>
         Try again
       </button>

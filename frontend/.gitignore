@@ -27,7 +27,8 @@ logs/
 # Optional: Build artifacts
 dist/
 build/
+*.tsbuildinfo
 
-# If previously used pnpm/yarn, ignore their files too:
-pnpm-lock.yaml
+# This project uses pnpm — keep pnpm-lock.yaml tracked for reproducible installs.
+# Ignore other package managers' lockfiles instead.
 yarn.lock

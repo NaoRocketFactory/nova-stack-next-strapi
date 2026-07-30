@@ -9,11 +9,11 @@ import styles from "./scss/BlockRenderer.module.scss";
 function InlineChild({ child }: { child: StrapiBlockChild }) {
   let node: React.ReactNode = child.text ?? "";
 
-  if (child.bold)          node = <strong>{node}</strong>;
-  if (child.italic)        node = <em>{node}</em>;
-  if (child.underline)     node = <u>{node}</u>;
+  if (child.bold) node = <strong>{node}</strong>;
+  if (child.italic) node = <em>{node}</em>;
+  if (child.underline) node = <u>{node}</u>;
   if (child.strikethrough) node = <s>{node}</s>;
-  if (child.code)          node = <code className={styles.inlineCode}>{node}</code>;
+  if (child.code) node = <code className={styles.inlineCode}>{node}</code>;
 
   if (child.type === "link" && child.url) {
     return (
@@ -62,11 +62,7 @@ function Block({ block }: { block: StrapiBlock }) {
       );
 
     case "quote":
-      return (
-        <blockquote className={styles.quote}>
-          {renderChildren(block.children)}
-        </blockquote>
-      );
+      return <blockquote className={styles.quote}>{renderChildren(block.children)}</blockquote>;
 
     case "code":
       return (
@@ -87,9 +83,7 @@ function Block({ block }: { block: StrapiBlock }) {
             className={styles.image}
           />
           {block.image.caption && (
-            <figcaption className={styles.figcaption}>
-              {block.image.caption}
-            </figcaption>
+            <figcaption className={styles.figcaption}>{block.image.caption}</figcaption>
           )}
         </figure>
       );

@@ -5,7 +5,8 @@ import type { Article } from "../../types/strapi";
 import { API_URL } from "../../lib/api";
 import styles from "./scss/articles.module.scss";
 
-export const dynamic = "force-dynamic";
+// Same ISR strategy as app/articles/[slug]/page.tsx.
+export const revalidate = 3600;
 
 export const metadata = {
   title: "Articles – Nova Starter Kit",

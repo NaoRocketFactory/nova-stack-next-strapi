@@ -33,13 +33,7 @@
       {
         "name": "next"
       }
-    ],
-    /* 🛣️ Path alias for cleaner imports */
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
+    ]
   },
   /* 📂 Files included in the TypeScript build */
   "include": [

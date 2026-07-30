@@ -21,24 +21,18 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Nova Starter Kit",
-  description:
-    "A modern starter kit powered by Next.js, Strapi, Sass Modules, and TypeScript.",
+  description: "A modern starter kit powered by Next.js, Strapi, Sass Modules, and TypeScript.",
   icons: {
     icon: "/pictures/favicon.ico",
     apple: "/pictures/nova-starter-kit-logo.png",
   },
   keywords: ["Next.js", "Strapi", "Sass", "Starter Kit", "TypeScript"],
-  authors: [
-    { name: "Nao Rocket Factory", url: "https://github.com/NaoRocketFactory" },
-  ],
+  authors: [{ name: "Nao Rocket Factory", url: "https://github.com/NaoRocketFactory" }],
   creator: "Nao Rocket Factory",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"
-  ),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
   openGraph: {
     title: "Nova Starter Kit",
-    description:
-      "Clean, scalable, and Strapi-ready Next.js starter kit built for modern devs.",
+    description: "Clean, scalable, and Strapi-ready Next.js starter kit built for modern devs.",
     siteName: "Nova Starter Kit",
     locale: "en_US",
     type: "website",
@@ -47,23 +41,22 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${inter.variable} ${poppins.variable}`}
-    >
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable}`}>
       <body>
         <ThemeProvider>
           <div className={styles.layout}>
-
             <header className={styles.header}>
               <div className={styles.headerInner}>
                 <Link href="/" className={styles.brand}>
                   Nova Starter Kit
                 </Link>
                 <nav className={styles.nav} aria-label="Main navigation">
-                  <Link href="/" className={styles.navLink}>Home</Link>
-                  <Link href="/articles" className={styles.navLink}>Articles</Link>
+                  <Link href="/" className={styles.navLink}>
+                    Home
+                  </Link>
+                  <Link href="/articles" className={styles.navLink}>
+                    Articles
+                  </Link>
                 </nav>
                 <ThemeToggle />
               </div>
@@ -82,7 +75,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </a>{" "}
               — Built with Next.js &amp; Strapi.
             </footer>
-
           </div>
         </ThemeProvider>
       </body>

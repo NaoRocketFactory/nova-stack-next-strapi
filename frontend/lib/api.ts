@@ -1,7 +1,6 @@
 import type { StrapiList, StrapiResponse } from "../types/strapi";
 
-export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
 
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
 
@@ -20,7 +19,7 @@ function handleApiError(res: Response): never {
       throw new Error("Unauthorized – check your API token");
     case 403:
       throw new Error(
-        "Forbidden – enable public permissions in Strapi Admin → Settings → Roles → Public"
+        "Forbidden – enable public permissions in Strapi Admin → Settings → Roles → Public",
       );
     case 404:
       throw new Error("Not Found – invalid Strapi endpoint");
@@ -41,7 +40,7 @@ function handleApiError(res: Response): never {
 export async function fetchAPI<T = unknown>(
   path: string,
   { populate = "*", ...options }: FetchOptions = {},
-  searchParams: Record<string, string> = {}
+  searchParams: Record<string, string> = {},
 ): Promise<T> {
   const url = new URL(`${API_URL}/api/${path}`);
 
@@ -93,7 +92,7 @@ export async function fetchAPI<T = unknown>(
  */
 export async function fetchCollection<T>(
   endpoint: string,
-  options: FetchOptions = {}
+  options: FetchOptions = {},
 ): Promise<StrapiList<T>> {
   return fetchAPI<StrapiList<T>>(endpoint, options);
 }
@@ -107,7 +106,7 @@ export async function fetchCollection<T>(
 export async function fetchSingle<T>(
   endpoint: string,
   id: string | number,
-  options: FetchOptions = {}
+  options: FetchOptions = {},
 ): Promise<StrapiResponse<T>> {
   return fetchAPI<StrapiResponse<T>>(`${endpoint}/${id}`, options);
 }
@@ -122,12 +121,8 @@ export async function fetchSingle<T>(
 export async function fetchBySlug<T>(
   endpoint: string,
   slug: string,
-  options: FetchOptions = {}
+  options: FetchOptions = {},
 ): Promise<T | null> {
-  const res = await fetchAPI<StrapiList<T>>(
-    endpoint,
-    options,
-    { "filters[slug][$eq]": slug }
-  );
+  const res = await fetchAPI<StrapiList<T>>(endpoint, options, { "filters[slug][$eq]": slug });
   return res.data[0] ?? null;
 }
