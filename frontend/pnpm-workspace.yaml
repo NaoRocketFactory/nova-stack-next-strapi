@@ -3,6 +3,10 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
 
+minimumReleaseAgeExclude:
+  - '@ai-sdk/gateway@4.0.50'
+  - ai@7.0.63
+
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - sharp

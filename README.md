@@ -80,6 +80,23 @@ Without this step, the frontend will receive `403 Forbidden` responses from the 
 
 ---
 
+## 🤖 AI-Ready
+
+The frontend ships with a thin, **multi-provider AI layer** built on the
+[Vercel AI SDK](https://sdk.vercel.dev/): swap between OpenAI, Anthropic, Google Gemini, and
+Mistral with a single environment variable (`AI_PROVIDER`) — application code never imports a
+provider SDK directly, it always goes through `getModel()`. Ready-made helpers cover common
+CMS-adjacent tasks (SEO title/description generation, summarization, translation, slug
+generation), exposed both as plain functions and through a rate-limited `/api/ai` route.
+
+It's entirely optional — leave `AI_API_KEY` unset and the rest of the starter kit works exactly
+as before.
+
+See [`frontend/lib/ai/README.md`](./frontend/lib/ai/README.md) for setup per provider, usage
+examples, and how to add a new provider.
+
+---
+
 ## 📄 License
 
 This starter is provided under a commercial license.  
