@@ -55,6 +55,9 @@ lcov.info
 .strapi-updater.json
 public/uploads/*
 !public/uploads/.gitkeep
+# Demo seed images (registered into the media library by seed.ts on first boot)
+!public/uploads/demo-article-1.jpg
+!public/uploads/demo-article-2.jpg
 
 ############################
 # Packages / Archives

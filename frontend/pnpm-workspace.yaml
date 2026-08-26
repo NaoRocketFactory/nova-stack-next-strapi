@@ -6,6 +6,9 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - '@ai-sdk/gateway@4.0.50'
   - ai@7.0.63
+  - '@next/swc-linux-arm64-gnu@16.3.3'
+  - '@next/swc-win32-x64-msvc@16.3.3'
+  - next@16.3.3
 
 onlyBuiltDependencies:
   - '@parcel/watcher'

@@ -5,6 +5,8 @@ import { ThemeProvider } from "../components/providers/ThemeProvider";
 import { ThemeToggle } from "../components/theme-toggle/ThemeToggle";
 import styles from "./scss/Layout.module.scss";
 import "../styles/globals.scss";
+// Side-effect import: validates process.env at server startup (see lib/env.ts).
+import "../lib/env";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,9 +24,14 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Nova Starter Kit",
   description: "A modern starter kit powered by Next.js, Strapi, Sass Modules, and TypeScript.",
+  manifest: "/manifest.json",
   icons: {
-    icon: "/pictures/favicon.ico",
-    apple: "/pictures/nova-starter-kit-logo.png",
+    icon: [
+      { url: "/pictures/favicon.ico" },
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/icons/icon-192.png",
   },
   keywords: ["Next.js", "Strapi", "Sass", "Starter Kit", "TypeScript"],
   authors: [{ name: "Nao Rocket Factory", url: "https://github.com/NaoRocketFactory" }],

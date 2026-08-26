@@ -12,14 +12,14 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "^4.0.38",
-    "@ai-sdk/google": "^4.0.42",
-    "@ai-sdk/mistral": "^4.0.29",
-    "@ai-sdk/openai": "^4.0.40",
-    "ai": "^7.0.63",
+    "@ai-sdk/anthropic": "^4.0.42",
+    "@ai-sdk/google": "^4.0.51",
+    "@ai-sdk/mistral": "^4.0.33",
+    "@ai-sdk/openai": "^4.0.47",
+    "ai": "^7.0.79",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
-    "next": "^16.2.12",
+    "next": "^16.3.3",
     "next-themes": "^0.4.6",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
@@ -33,10 +33,10 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint": "^9.0.0",
-    "eslint-config-next": "^16.2.12",
+    "eslint-config-next": "^16.3.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
-    "sass": "^1.93.2",
+    "sass": "^1.103.1",
     "typescript": "^6.0.3"
   }
 }

@@ -7,15 +7,15 @@ This root README covers the global setup. Detailed documentation is in each sub-
 - [`frontend/README.md`](./frontend/README.md)
 
 > 📍 **This project is distributed under a commercial license.**  
-> Please refer to the `LICENSE` file for usage terms and restrictions.
+> Please refer to [`LICENSE.md`](./LICENSE.md) for usage terms and restrictions.
 
 ---
 
 ## 📂 Project Structure
 
 ```bash
-├── backend/      # Strapi 5 (Headless CMS & API)
-├── frontend/     # Next.js 15 (Frontend)
+├── backend/      # Strapi 5.52.2 (Headless CMS & API)
+├── frontend/     # Next.js 16.3.3 (Frontend)
 └── package.json  # Root scripts (runs both apps in parallel)
 ```
 
@@ -25,6 +25,24 @@ This root README covers the global setup. Detailed documentation is in each sub-
 
 - Node.js 22 (see `.nvmrc`)
 - pnpm 9+ — install with `npm install -g pnpm`
+
+---
+
+## 🧱 Tech stack & versions
+
+| Package      | frontend/ | backend/ |
+| ------------ | --------- | -------- |
+| Next.js      | 16.3.3    | —        |
+| React        | 19.2.x    | 18.x (admin panel only) |
+| Strapi       | —         | 5.52.2   |
+| TypeScript   | 6.0.3     | 6.0.3    |
+| ESLint       | 9.x       | 10.9.1   |
+
+TypeScript stays on 6.0.3 on both sides (not 7.x) and the frontend stays on ESLint 9 (not 10):
+`typescript-eslint` does not support TypeScript 7 yet, and `eslint-plugin-react` (pulled in by
+`eslint-config-next`) does not support ESLint 10 yet. The backend has no React-lint dependency, so
+it isn't affected by the second constraint and already runs ESLint 10. Re-check both once those
+packages catch up — see [`MAINTENANCE.md`](./MAINTENANCE.md).
 
 ---
 
@@ -54,20 +72,27 @@ pnpm dev
 | Service             | URL                          |
 | ------------------- | ---------------------------- |
 | Frontend (Next.js)  | http://localhost:3000        |
-| Backend (Strapi)    | http://localhost:1337/admin  |
+| Backend (Strapi)    | http://localhost:1338/admin  |
 
 ---
 
-## 🔐 Strapi API Permissions (required on first launch)
+## ⚠️ Required step after installation
 
-After creating your Strapi admin account, you must enable public access to the content API:
+The frontend reads articles and pages through Strapi's **public** REST API. On a fresh install
+this access is granted **automatically** the first time Strapi boots (see
+`backend/src/api/utils/seed.ts` → `grantPublicPermissions`) — as long as `pnpm dev` (or
+`pnpm dev:backend`) has run at least once, `/articles` should work out of the box.
 
-1. Go to **Settings → Users & Permissions → Roles → Public**
-2. Under **Article**, enable: `find`, `findOne`
-3. Under **Page**, enable: `find`, `findOne`
-4. Click **Save**
+If you ever see `403 Forbidden` responses from the API (e.g. permissions were reset, or a
+database was copied without re-running the seed), grant access manually:
 
-Without this step, the frontend will receive `403 Forbidden` responses from the API.
+1. Log into the Strapi admin panel → **Settings**
+2. **Users & Permissions Plugin → Roles → Public**
+3. Under **Article**, tick `find` and `findOne`
+4. Under **Page**, tick `find` and `findOne`
+5. Click **Save**
+
+Without this, the frontend will receive `403 Forbidden` responses from the API.
 
 ---
 
@@ -100,4 +125,4 @@ examples, and how to add a new provider.
 ## 📄 License
 
 This starter is provided under a commercial license.  
-Please review the `LICENSE` file before using, modifying, or distributing this project.
+Please review [`LICENSE.md`](./LICENSE.md) before using, modifying, or distributing this project.

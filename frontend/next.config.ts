@@ -7,9 +7,9 @@ const isDev = process.env.NODE_ENV !== "production";
 // env var used by lib/api.ts so CSP stays in sync with the actual backend.
 const strapiOrigin = (() => {
   try {
-    return new URL(process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:1337").origin;
+    return new URL(process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:1338").origin;
   } catch {
-    return "http://localhost:1337";
+    return "http://localhost:1338";
   }
 })();
 
@@ -46,7 +46,7 @@ const nextConfig: NextConfig = {
         // Strapi local dev server
         protocol: "http",
         hostname: "localhost",
-        port: "1337",
+        port: "1338",
         pathname: "/uploads/**",
       },
       // Add your production Strapi domain here, e.g.:

@@ -18,24 +18,24 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.51.1",
-    "@strapi/plugin-users-permissions": "5.51.1",
-    "@strapi/strapi": "5.51.1",
-    "better-sqlite3": "11.3.0",
+    "@strapi/plugin-cloud": "5.52.2",
+    "@strapi/plugin-users-permissions": "5.52.2",
+    "@strapi/strapi": "5.52.2",
+    "better-sqlite3": "^12.11.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.0.0",
+    "@eslint/js": "^10.0.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^9.0.0",
+    "eslint": "^10.9.1",
     "globals": "^17.0.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.65.0"
+    "typescript-eslint": "^8.68.0"
   },
   "engines": {
     "node": ">=18.0.0 <=22.x.x",

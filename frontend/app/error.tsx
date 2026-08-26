@@ -24,7 +24,7 @@ export default function Error({ error, reset }: ErrorProps) {
       <h2 className={styles.title}>Something went wrong</h2>
       <p className={styles.message}>
         {isStrapiDown
-          ? "Cannot reach the API. Make sure Strapi is running on port 1337."
+          ? "Cannot reach the API. Make sure Strapi is running on port 1338."
           : error.message || "An unexpected error occurred."}
       </p>
       {error.digest && <p className={styles.digest}>Error ID: {error.digest}</p>}

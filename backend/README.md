@@ -68,13 +68,13 @@ cp .env.example .env
 ```bash
 npm run dev
 ```
-Strapi will start on http://localhost:1337/admin
+Strapi will start on http://localhost:1338/admin
 
 ### **🔐 Accessing the Strapi Administration Panel**
 
 On the first launch (npm run develop), Strapi will prompt you to create your first administrator account:
 
-- Go to http://localhost:1337/admin
+- Go to http://localhost:1338/admin
 
 - Fill in the following fields:
 
