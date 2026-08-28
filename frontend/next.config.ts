@@ -49,12 +49,12 @@ const nextConfig: NextConfig = {
         port: "1338",
         pathname: "/uploads/**",
       },
-      // Add your production Strapi domain here, e.g.:
-      // {
-      //   protocol: "https",
-      //   hostname: "your-strapi-domain.com",
-      //   pathname: "/uploads/**",
-      // },
+      {
+        // Strapi production host on Render
+        protocol: "https",
+        hostname: "*.onrender.com",
+        pathname: "/uploads/**",
+      },
     ],
   },
   async headers() {
