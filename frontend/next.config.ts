@@ -52,7 +52,7 @@ const nextConfig: NextConfig = {
       {
         // Strapi production host on Render
         protocol: "https",
-        hostname: "*.onrender.com",
+        hostname: "nova-stack-next-strapi.onrender.com",
         pathname: "/uploads/**",
       },
     ],
