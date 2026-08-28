@@ -51,13 +51,20 @@ backend/
 
 ---
 
+## ✅ Requirements
+
+- Node.js 22
+- pnpm 9+ — install with `npm install -g pnpm`
+
+---
+
 ## 🚀 Getting Started
 
 ### 1. **Install**
 
 ```bash
 cd backend
-npm install
+pnpm install
 
 ```
 ---
@@ -73,13 +80,13 @@ cp .env.example .env
 ### 3. **Run Developpement server**
 
 ```bash
-npm run dev
+pnpm dev
 ```
 Strapi will start on http://localhost:1338/admin
 
 ### **🔐 Accessing the Strapi Administration Panel**
 
-On the first launch (npm run develop), Strapi will prompt you to create your first administrator account:
+On the first launch (pnpm develop), Strapi will prompt you to create your first administrator account:
 
 - Go to http://localhost:1338/admin
 
@@ -104,16 +111,20 @@ This starter kit includes an automatic seed system that generates demo content o
 | Article    | “Welcome to Nova Starter Kit 🚀”, “Next.js + Strapi + Sass = ❤️” |
 | Page       | “Home”, “About”                                              |
 
-## **🔐 API Permissions (required)**
+## **🔐 API Permissions**
 
-By default Strapi blocks all public API access. After creating your admin account:
+By default Strapi blocks all public API access. On a fresh database, the seed script
+(`src/api/utils/seed.ts` → `grantPublicPermissions`) grants `find`/`findOne` on **Article** and
+**Page** to the Public role **automatically** the first time Strapi boots — no manual step needed
+in the common case.
+
+If you ever see `403 Forbidden` errors from the API (e.g. permissions were reset, or a database
+was copied without re-running the seed), grant access manually as a fallback:
 
 1. Go to **Settings → Users & Permissions → Roles → Public**
 2. Under **Article**, enable: `find`, `findOne`
 3. Under **Page**, enable: `find`, `findOne`
 4. Click **Save**
-
-Without this step, the frontend will receive `403 Forbidden` errors.
 
 ## **🔧 Environment Variables**
 
@@ -130,6 +141,7 @@ production — Strapi will refuse to boot without the security keys.
 | `JWT_SECRET` | Signs Users & Permissions JWTs | random string |
 | `ENCRYPTION_KEY` | Encrypts sensitive config values | random string |
 | `DATABASE_CLIENT` | `sqlite` locally, `postgres` in production | `postgres` |
+| `DATABASE_URL` | Full Postgres connection string (alternative to the individual `DATABASE_*` vars below) | `postgresql://user:pass@host/db` |
 | `DATABASE_HOST` / `_PORT` / `_NAME` / `_USERNAME` / `_PASSWORD` | Postgres connection (production only) | from your DB provider |
 | `NODE_ENV` | `development` locally, `production` when deployed | `production` |
 | `HOST` | Bind address | `0.0.0.0` |
@@ -148,7 +160,7 @@ In production, also set `DATABASE_CLIENT=postgres` plus the matching `DATABASE_H
 
 ## **📜 License**
 
-Commercial License – Nova Starter Kit © 2025 Francois
+Commercial License – Nova Starter Kit © 2026 Nao Rocket Factory
 
 This software is licensed for individual and commercial use under a single-developer license.
 
@@ -166,4 +178,4 @@ Publish this code publicly (e.g., GitHub, GitLab, etc.).
 
 For full license terms, see the LICENSE
 
-### 👉 Next step: Go to the frontend README
+### 👉 Next step: [Go to the frontend README](../frontend/README.md)
