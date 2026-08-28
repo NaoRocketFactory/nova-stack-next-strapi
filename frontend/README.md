@@ -28,7 +28,6 @@ A modern, scalable, and clean frontend starter built with:
 - ✅ Fully typed with TypeScript
 - ✅ SCSS Modules for scoped, maintainable styling
 - ✅ Scalable project structure
-- ✅ Path aliases using `@/`
 - ✅ Ready to consume APIs (Strapi or any REST backend)
 - ✅ Preconfigured ESLint with Next.js best practices
 - 🚀 Ultra-fast dev server with Turbopack
@@ -84,16 +83,19 @@ frontend/
 
 1. Install dependencies
 
-npm install
+```bash
+pnpm install
+```
 
 ### 3. Scripts
 
 | Script          | Description                                   |
 | --------------- | --------------------------------------------- |
-| `npm run dev`   | Start the development server (with Turbopack) |
-| `npm run build` | Build for production                          |
-| `npm run start` | Start the production server                   |
-| `npm run lint`  | Run ESLint                                    |
+| `pnpm dev`      | Start the development server (with Turbopack) |
+| `pnpm build`    | Build for production                          |
+| `pnpm start`    | Start the production server                   |
+| `pnpm lint`     | Run ESLint                                    |
+| `pnpm typecheck`| Run TypeScript in check-only mode             |
 
 
 ### Environment variables
@@ -123,9 +125,10 @@ You can customize colors, spacing, and variables by editing your SCSS files unde
 
 /components/[name]/scss/[Component].module.scss
 
-To define global variables, create a styles/_variables.scss file and use:
+Global variables live in `styles/_variables.scss` — import them with a relative path from your
+component's SCSS module, e.g. from `components/main/scss/Main.module.scss`:
 
-@use "@/styles/variables" as *;
+@use "../../../styles/variables" as *;
 
 ### 🖼️ Favicon
 
@@ -148,6 +151,17 @@ You can easily customize it with your own brand information:
 - `theme_color`: your primary brand color  
 - `icons`: path to your custom favicon or logo
 
+## 🤖 AI-Ready
+
+This starter includes a multi-provider AI layer. See [`lib/ai/README.md`](./lib/ai/README.md) for
+configuration.
+
+Supported providers: OpenAI, Anthropic, Google Gemini, Mistral.
+
+## 🧪 Tests
+
+No tests are included by default. See [`tests/README.md`](./tests/README.md) for details and
+rationale.
 
 ## 📜 License
 
@@ -167,11 +181,13 @@ A tech-driven initiative focused on building high-quality starter kits for moder
 
 If you find this starter helpful:
 
-- ⭐ Star the repo
-
 - 🛠 Clone it and build your next idea
 
 - 📣 Share it with other devs
 
 - 🧑‍💼 Use it for your freelance or startup projects
+
+---
+
+👈 Previous step: [Backend setup](../backend/README.md)
 
