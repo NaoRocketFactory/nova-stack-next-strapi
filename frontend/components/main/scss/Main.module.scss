@@ -35,28 +35,47 @@
   margin-bottom: 2rem;
 }
 
-.docs {
-  margin: 1rem 0 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
-  width: 100%;
-  max-width: 640px;
-}
-
-.docsTitle {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0 0 1rem;
-}
-
-.docsLinks {
+.ctaRow {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btnGhost {
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+
+  &:hover {
+    background-color: var(--color-surface);
+    border-color: var(--color-primary);
+  }
+}
+
+.btnPrimary {
+  color: #fff;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+  }
 }
 
 .link {
