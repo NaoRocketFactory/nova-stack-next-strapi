@@ -10,9 +10,37 @@ export default function Main() {
       </div>
       <h2 className={styles.title}> Welcome and enjoy !</h2>
       <p className={styles.subtitle}>Next.js + Strapi + Sass Modules + TypeScript.</p>
-      <a href="/readme" className={styles.link}>
-        📖 View README
-      </a>
+
+      <div className={styles.docs}>
+        <h3 className={styles.docsTitle}>Documentation</h3>
+        <div className={styles.docsLinks}>
+          <a
+            href="https://github.com/NaoRocketFactory/nova-stack-next-strapi/blob/main/README.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
+            📖 Getting Started
+          </a>
+          <a
+            href="https://github.com/NaoRocketFactory/nova-stack-next-strapi/blob/main/frontend/README.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
+            🎨 Frontend Guide
+          </a>
+          <a
+            href="https://github.com/NaoRocketFactory/nova-stack-next-strapi/blob/main/backend/README.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
+            ⚙️ Backend Guide
+          </a>
+        </div>
+      </div>
+
       <a href="/about" className={styles.link}>
         📖 About Nao Rocket Factory
       </a>

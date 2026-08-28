@@ -35,6 +35,30 @@
   margin-bottom: 2rem;
 }
 
+.docs {
+  margin: 1rem 0 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+  max-width: 640px;
+}
+
+.docsTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 1rem;
+}
+
+.docsLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
 .link {
   display: inline-block;
   margin-top: 0.75rem;
