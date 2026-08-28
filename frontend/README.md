@@ -38,29 +38,46 @@ A modern, scalable, and clean frontend starter built with:
 ## 📁 Project Structure
 
 ```bash
-
-nova-starter-kit/
+frontend/
+├── app/
+│   ├── api/ai/route.ts        # AI API route (streaming, rate-limited)
+│   ├── articles/
+│   │   ├── [slug]/page.tsx    # Article detail (ISR)
+│   │   └── page.tsx           # Articles list (ISR)
+│   ├── about/page.tsx
+│   ├── readme/page.tsx
+│   ├── error.tsx              # Route-level error boundary
+│   ├── global-error.tsx       # Root layout error boundary
+│   ├── loading.tsx
+│   ├── not-found.tsx
+│   ├── sitemap.ts             # Dynamic sitemap.xml
+│   ├── layout.tsx             # Root layout (fonts, theme, metadata)
+│   └── page.tsx                # Homepage
 │
-├── app/                # App Router directory
-│   ├──about      # About Page
-│   ├──readme      # Readme Page
-│   ├── layout.tsx       # Global layout
-│   └── page.tsx         # Homepage
+├── components/
+│   ├── blocks/BlockRenderer.tsx    # Strapi rich-text block renderer
+│   ├── main/Main.tsx
+│   ├── providers/ThemeProvider.tsx
+│   └── theme-toggle/ThemeToggle.tsx
 │
-├── components/          # Reusable components
-│   └── main/
-│       ├── Main.tsx
-│       └── scss/
-│           └── Main.module.scss
+├── lib/
+│   ├── ai/                     # Multi-provider AI layer — see lib/ai/README.md
+│   ├── api.ts                  # Strapi fetch wrapper
+│   └── env.ts                  # Runtime env validation (zod)
 │
-├── lib/                 # Utility functions & API fetchers (optional)
-├── public/              # Static assets (logo, favicons, etc.)
-├── styles/              # Global SCSS variables (optional)
+├── public/
+│   ├── icons/                  # PWA icons (192×192, 512×512)
+│   ├── pictures/                # Logo, favicon
+│   └── manifest.json
 │
-├── tsconfig.json       
-├── next.config.js
+├── styles/                     # Global SCSS
+├── types/                      # Shared TS types (Strapi response shapes)
+├── tests/                      # Testing setup notes (no tests included by default)
+│
+├── .env.example
+├── next.config.ts
+├── tsconfig.json
 └── package.json
-
 ```
 
 ## 🚀 Getting Started

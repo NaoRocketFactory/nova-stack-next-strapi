@@ -14,9 +14,14 @@ This root README covers the global setup. Detailed documentation is in each sub-
 ## 📂 Project Structure
 
 ```bash
-├── backend/      # Strapi 5.52.2 (Headless CMS & API)
-├── frontend/     # Next.js 16.3.3 (Frontend)
-└── package.json  # Root scripts (runs both apps in parallel)
+├── .github/         # CI workflow (.github/workflows/ci.yml) + Dependabot config
+├── backend/         # Strapi 5.52.2 (Headless CMS & API) — see backend/README.md
+├── frontend/        # Next.js 16.3.3 (Frontend) — see frontend/README.md
+├── .nvmrc            # Node version pin (22)
+├── LICENSE.md
+├── MAINTENANCE.md    # Maintenance checklist (monthly/quarterly/semi-annual)
+├── README.md         # This file
+└── package.json      # Root scripts (runs both apps in parallel)
 ```
 
 ---

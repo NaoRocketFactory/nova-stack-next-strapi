@@ -21,24 +21,31 @@ This backend provides a **preconfigured API**, **auto-seeded demo content**, and
 ## ⚙️ Project Structure
 
 ```bash
-
 backend/
-│
 ├── src/
-│ ├── api/
-│ │ ├── article/ # Collection Type (Article)
-│ │ └── utils/seed.ts # Demo data seeding script
-│ │
-│ ├── admin/ # Strapi Admin configuration
-│ ├── extensions/ # Plugin overrides (if needed)
-│ └── index.ts # Entry point (bootstrap + register)
+│   ├── api/
+│   │   ├── article/           # Collection Type (Article)
+│   │   ├── page/               # Collection Type (Page)
+│   │   └── utils/seed.ts       # Demo data + public-permissions seeding
+│   ├── admin/                  # Strapi Admin panel customization (opt-in)
+│   ├── extensions/              # Plugin overrides (if needed)
+│   └── index.ts                 # Entry point (register + bootstrap)
 │
-├── config/ # Database, middlewares, plugins
-├── public/ # Uploads & static assets
-├── .env.example # Example environment variables
+├── config/
+│   ├── admin.ts
+│   ├── api.ts
+│   ├── database.ts
+│   ├── middlewares.ts
+│   ├── plugins.ts
+│   └── server.ts
+│
+├── database/migrations/
+├── public/                      # Uploads & static assets
+├── types/generated/              # Auto-generated Strapi types
+│
+├── .env.example
 ├── package.json
 └── README.md
-
 ```
 
 
