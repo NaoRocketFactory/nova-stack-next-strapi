@@ -1,4 +1,4 @@
-# 🚀 Nova Starter Kit – Backend (Strapi 5)
+# 🚀 Nova Starter Kit – Backend (Strapi 5.52.2)
 
 A modern, ready-to-use **Strapi 5 backend** built for seamless integration with the **Nova Starter Kit frontend** (Next.js + TypeScript + Sass).
 
@@ -10,7 +10,7 @@ This backend provides a **preconfigured API**, **auto-seeded demo content**, and
 
 | Component | Description |
 |------------|--------------|
-| **Strapi 5** | Open-source headless CMS for structured content |
+| **Strapi 5.52.2** | Open-source headless CMS for structured content |
 | **SQLite** | Lightweight database (ideal for demos & local dev) |
 | **TypeScript** | Type safety and developer experience |
 | **API Token Auth** | Ready-to-use token-based API security |
@@ -107,6 +107,37 @@ By default Strapi blocks all public API access. After creating your admin accoun
 4. Click **Save**
 
 Without this step, the frontend will receive `403 Forbidden` errors.
+
+## **🔧 Environment Variables**
+
+All variables live in `.env` (copy from `.env.example`). None of them are optional in
+production — Strapi will refuse to boot without the security keys.
+
+| Variable | Purpose | Example |
+| --- | --- | --- |
+| `APP_KEYS` | Session/cookie signing, comma-separated | `key1,key2,key3,key4` |
+| `API_TOKEN_SALT` | Salts generated API tokens | random string |
+| `ADMIN_JWT_SECRET` | Signs admin panel JWTs | random string |
+| `ADMIN_AUTH_SECRET` | Admin auth secret | random string |
+| `TRANSFER_TOKEN_SALT` | Salts data-transfer tokens | random string |
+| `JWT_SECRET` | Signs Users & Permissions JWTs | random string |
+| `ENCRYPTION_KEY` | Encrypts sensitive config values | random string |
+| `DATABASE_CLIENT` | `sqlite` locally, `postgres` in production | `postgres` |
+| `DATABASE_HOST` / `_PORT` / `_NAME` / `_USERNAME` / `_PASSWORD` | Postgres connection (production only) | from your DB provider |
+| `NODE_ENV` | `development` locally, `production` when deployed | `production` |
+| `HOST` | Bind address | `0.0.0.0` |
+| `PORT` | Listen port | `1338` |
+| `FRONTEND_URL` | Allowed CORS origin(s), comma-separated | `https://your-frontend-domain.com` |
+
+Generate real values for every secret above before deploying — never reuse the `dev...` placeholders
+from `.env.example`:
+
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+```
+
+In production, also set `DATABASE_CLIENT=postgres` plus the matching `DATABASE_HOST` /
+`_PORT` / `_NAME` / `_USERNAME` / `_PASSWORD` — SQLite is meant for local development only.
 
 ## **📜 License**
 

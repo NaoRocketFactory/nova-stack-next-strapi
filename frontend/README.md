@@ -2,8 +2,8 @@
 
 A modern, scalable, and clean frontend starter built with:
 
-- **Next.js 15 (App Router)**
-- **TypeScript**
+- **Next.js 16.3.3 (App Router)**
+- **TypeScript 6.0.3**
 - **Sass Modules (SCSS)**
 - ⚙️ Ready to connect with **Strapi CMS**
 
@@ -11,9 +11,20 @@ A modern, scalable, and clean frontend starter built with:
 
 ---
 
+## 🧱 Versions
+
+| | |
+| --- | --- |
+| Next.js | 16.3.3 |
+| TypeScript | 6.0.3 |
+| Node.js | 22 |
+| pnpm | 9+ |
+
+---
+
 ## 🌟 Features
 
-- ✅ Next.js 15 App Router (layouts, server components)
+- ✅ Next.js 16.3.3 App Router (layouts, server components)
 - ✅ Fully typed with TypeScript
 - ✅ SCSS Modules for scoped, maintainable styling
 - ✅ Scalable project structure
@@ -70,7 +81,21 @@ npm install
 
 ### Environment variables
 
-Copy `.env.example` to `.env` and configure your Strapi API endpoint:
+Copy `.env.example` to `.env.local` and set:
+
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:1338
+STRAPI_API_TOKEN=your-token-here
+
+# Optional — see lib/ai/README.md
+AI_PROVIDER=anthropic
+AI_API_KEY=your-key-here
+```
+
+`STRAPI_API_TOKEN`, `AI_PROVIDER` and `AI_API_KEY` are all optional — the app works against
+Strapi's public API and without AI features if they're left unset. All four are validated at
+startup by [`lib/env.ts`](./lib/env.ts), which fails fast with a clear message if one is set to an
+invalid value (e.g. a malformed URL, or an `AI_PROVIDER` outside the supported list).
 
 
 ## 🎨 Styling

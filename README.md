@@ -37,6 +37,8 @@ This root README covers the global setup. Detailed documentation is in each sub-
 | Strapi       | —         | 5.52.2   |
 | TypeScript   | 6.0.3     | 6.0.3    |
 | ESLint       | 9.x       | 10.9.1   |
+| Node.js      | 22        | 22       |
+| pnpm         | 9+        | 9+       |
 
 TypeScript stays on 6.0.3 on both sides (not 7.x) and the frontend stays on ESLint 9 (not 10):
 `typescript-eslint` does not support TypeScript 7 yet, and `eslint-plugin-react` (pulled in by
@@ -102,6 +104,18 @@ Without this, the frontend will receive `403 Forbidden` responses from the API.
 | ------------------------ | ---------------------------------- |
 | `backend/.env.example`   | Strapi keys, DB config, ports      |
 | `frontend/.env.example`  | API URL, app URL, Strapi API token |
+
+Key variables in `frontend/.env.local` (see [`frontend/lib/env.ts`](./frontend/lib/env.ts) for the
+full validated schema):
+
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:1338
+STRAPI_API_TOKEN=your-token-here
+
+# Optional — see the AI-Ready section below
+AI_PROVIDER=anthropic
+AI_API_KEY=your-key-here
+```
 
 ---
 
