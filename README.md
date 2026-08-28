@@ -55,10 +55,18 @@ packages catch up — see [`MAINTENANCE.md`](./MAINTENANCE.md).
 
 ## 🧪 Install & Run
 
-### 1. Install root dependencies
+### 1. Install dependencies
+
+The root `package.json` has no workspace configuration, so `pnpm install` at the repo root only
+installs its own tiny devDependency (`npm-run-all`) — it does **not** install `backend/` or
+`frontend/`. Install each app separately:
 
 ```bash
-pnpm install
+# Backend
+cd backend && pnpm install
+
+# Frontend
+cd frontend && pnpm install
 ```
 
 ### 2. Configure environment variables
@@ -145,3 +153,7 @@ examples, and how to add a new provider.
 
 This starter is provided under a commercial license.  
 Please review [`LICENSE.md`](./LICENSE.md) before using, modifying, or distributing this project.
+
+---
+
+© 2026 Nao Rocket Factory — Commercial License · starterrocket.dev@gmail.com
