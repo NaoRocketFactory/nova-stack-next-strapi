@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../../components/main/scss/Main.module.scss";
 import logoNova from "../../public/pictures/logo-nova-stack.png";
 
@@ -12,14 +13,9 @@ export default function Main() {
       <p className={styles.subtitle}>Next.js + Strapi + Sass Modules + TypeScript.</p>
 
       <div className={styles.ctaRow}>
-        <a
-          href="https://github.com/NaoRocketFactory/nova-stack-next-strapi/blob/main/README.md"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${styles.btn} ${styles.btnGhost}`}
-        >
+        <Link href="/readme" className={`${styles.btn} ${styles.btnGhost}`}>
           📖 README
-        </a>
+        </Link>
         <a
           href="https://naorocketfactory.dev/kits/nova-stack"
           target="_blank"
