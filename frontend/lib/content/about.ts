@@ -78,10 +78,11 @@ export const aboutContentEn: AboutContent = {
       },
       {
         name: "Atlas Stack",
-        tech: "Java 21 + Spring Boot + React",
-        description: "Enterprise-grade. For teams who build serious backends.",
-        price: "Coming soon — 99€",
-        href: "https://naorocketfactory.dev",
+        tech: "Java 25 + Spring Boot + React",
+        description:
+          "Production-ready Java backend + React frontend. Built for senior Java developers.",
+        price: "Coming soon — 129€",
+        href: "https://naorocketfactory.dev/kits/atlas-stack",
         available: false,
       },
     ],
@@ -163,10 +164,11 @@ export const aboutContentFr: AboutContent = {
       },
       {
         name: "Atlas Stack",
-        tech: "Java 21 + Spring Boot + React",
-        description: "Enterprise-grade. Pour les équipes qui construisent des backends sérieux.",
-        price: "Bientôt disponible — 99€",
-        href: "https://naorocketfactory.dev",
+        tech: "Java 25 + Spring Boot + React",
+        description:
+          "Backend Java production-ready + frontend React. Conçu pour les développeurs Java confirmés.",
+        price: "Bientôt disponible — 129€",
+        href: "https://naorocketfactory.dev/kits/atlas-stack",
         available: false,
       },
     ],

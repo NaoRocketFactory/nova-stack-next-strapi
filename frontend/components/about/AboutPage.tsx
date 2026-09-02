@@ -61,7 +61,6 @@ export default function AboutPage({ content }: AboutPageProps) {
               key={kit.name}
               className={`${styles.kitCard} ${kit.featured ? styles.kitCardFeatured : ""}`}
             >
-              {kit.featured && <span className={styles.kitBadge}>This kit</span>}
               <h3 className={styles.kitName}>{kit.name}</h3>
               <p className={styles.kitTech}>{kit.tech}</p>
               <p className={styles.kitDescription}>{kit.description}</p>
