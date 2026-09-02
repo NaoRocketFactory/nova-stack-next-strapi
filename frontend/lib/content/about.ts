@@ -16,7 +16,7 @@ export interface AboutContent {
   features: { heading: string; items: string[]; note: string };
   kits: { heading: string; items: AboutKit[] };
   terms: { heading: string; items: string[]; note: string };
-  follow: { heading: string; website: string; github: string; email: string };
+  contact: { heading: string; body: string; email: string };
   tagline: string;
 }
 
@@ -97,10 +97,9 @@ export const aboutContentEn: AboutContent = {
     ],
     note: "You maintain your own fork.\nWe maintain the kit.",
   },
-  follow: {
-    heading: "Follow us",
-    website: "naorocketfactory.dev",
-    github: "github.com/NaoRocketFactory",
+  contact: {
+    heading: "Get in touch",
+    body: "Have a question about a kit or want to suggest a feature? Just reach out.",
     email: "starterrocket.dev@gmail.com",
   },
   tagline: "Nao Rocket Factory — Build fast. Ship faster.",
@@ -183,10 +182,9 @@ export const aboutContentFr: AboutContent = {
     ],
     note: "Vous maintenez votre fork.\nOn maintient le kit.",
   },
-  follow: {
-    heading: "Nous suivre",
-    website: "naorocketfactory.dev",
-    github: "github.com/NaoRocketFactory",
+  contact: {
+    heading: "Nous contacter",
+    body: "Une question sur un kit ou une suggestion ? Écrivez-nous.",
     email: "starterrocket.dev@gmail.com",
   },
   tagline: "Nao Rocket Factory — Construisez vite. Livrez plus vite.",

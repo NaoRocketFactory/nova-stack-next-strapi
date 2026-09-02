@@ -155,13 +155,6 @@
   }
 }
 
-.follow {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  align-items: flex-start;
-}
-
 .followLink {
   font-size: 1.0625rem;
   color: var(--color-text);

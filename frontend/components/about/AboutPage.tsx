@@ -6,7 +6,7 @@ interface AboutPageProps {
 }
 
 export default function AboutPage({ content }: AboutPageProps) {
-  const { hero, mission, targets, features, kits, terms, follow, tagline } = content;
+  const { hero, mission, targets, features, kits, terms, contact, tagline } = content;
 
   return (
     <article className={styles.page}>
@@ -102,28 +102,11 @@ export default function AboutPage({ content }: AboutPageProps) {
       </section>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>{follow.heading}</h2>
-        <div className={styles.follow}>
-          <a
-            href={`https://${follow.website}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.followLink}
-          >
-            🌐 {follow.website}
-          </a>
-          <a
-            href={`https://${follow.github}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.followLink}
-          >
-            🐙 {follow.github}
-          </a>
-          <a href={`mailto:${follow.email}`} className={styles.followLink}>
-            📩 {follow.email}
-          </a>
-        </div>
+        <h2 className={styles.sectionTitle}>{contact.heading}</h2>
+        <p className={styles.prose}>{contact.body}</p>
+        <a href={`mailto:${contact.email}`} className={styles.followLink}>
+          📩 {contact.email}
+        </a>
       </section>
 
       <p className={styles.tagline}>{tagline}</p>
