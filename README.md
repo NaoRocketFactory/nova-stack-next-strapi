@@ -41,7 +41,7 @@ Agency (unlimited projects) — 149€
 ## License
 
 Commercial license — © 2026 Nao Rocket Factory  
-- 📄 [LICENSE.md](https://github.com/NaoRocketFactory/nova-stack-next-strapi/blob/main/LICENSE.md) (English)
-- 📄 [LICENSE.fr.md](https://github.com/NaoRocketFactory/nova-stack-next-strapi/blob/main/LICENSE.fr.md) (Français)
+- 📄 [LICENSE.md](https://nova-stack-next-strapi.vercel.app/license) (English)
+- 📄 [LICENSE.fr.md](https://nova-stack-next-strapi.vercel.app/fr/license) (Français)
 
 📩 starterrocket.dev@gmail.com
