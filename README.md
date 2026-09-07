@@ -41,6 +41,7 @@ Agency (unlimited projects) — 149€
 ## License
 
 Commercial license — © 2026 Nao Rocket Factory  
-See LICENSE.md for full terms.
+- 📄 [LICENSE.md](LICENSE.md) (English)
+- 📄 [LICENSE.fr.md](LICENSE.fr.md) (Français)
 
 📩 starterrocket.dev@gmail.com
