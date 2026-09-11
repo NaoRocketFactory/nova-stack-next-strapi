@@ -55,7 +55,8 @@ export async function fetchAPI<T = unknown>(
 
   try {
     const res = await fetch(url.toString(), {
-      cache: "no-store",
+      // ISR by default — callers can still opt out via `options.cache`/`options.next`.
+      next: { revalidate: 3600 },
       signal: controller.signal,
       ...options,
       headers: {

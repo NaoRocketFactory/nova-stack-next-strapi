@@ -7,6 +7,9 @@ import type { Article } from "../../../types/strapi";
 import BlockRenderer from "../../../components/blocks/BlockRenderer";
 import styles from "./scss/article.module.scss";
 
+// Force static rendering so Vercel never bails into a request-time
+// Strapi fetch (which was causing DYNAMIC_SERVER_USAGE / 500s).
+export const dynamic = "force-static";
 // New articles published after the build are served on-demand and cached.
 export const dynamicParams = true;
 export const revalidate = 3600;
